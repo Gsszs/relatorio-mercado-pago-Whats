@@ -11,9 +11,9 @@ const API_URL = config.apiUrl
 const client = new Client({
     puppeteer: {
         headless: true,
-        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
     },
-})
+});
 
 client.on('qr', (qr) => {
     qrcode.generate(qr, { small: true });
