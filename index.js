@@ -110,8 +110,3 @@ async function notificarVenda(venda) {
 
     await client.sendMessage(NUMERO, logVenda);
 }
-
-setInterval(() => {
-    const vendaSimulada = { item: 'BloxFruits', valor: (Math.random() * 100).toFixed(2) };
-    notificarVenda(vendaSimulada);
-}, 60000);
