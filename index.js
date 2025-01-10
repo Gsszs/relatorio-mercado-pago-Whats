@@ -8,7 +8,12 @@ const TOKEN_MP = config.acess_token
 const NUMERO = config.numero
 const API_URL = config.apiUrl
 
-const client = new Client();
+const client = new Client({
+    puppeteer: {
+        headless: true,
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    },
+})
 
 client.on('qr', (qr) => {
     qrcode.generate(qr, { small: true });
